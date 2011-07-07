@@ -1,0 +1,85 @@
+﻿<!--
+// Knockout Demo App JavaScript library
+// (c) Joe McBride - http://uicraftsman.com/
+// License: MIT (http://www.opensource.org/licenses/mit-license.php)
+-->
+<script id='About-Template' type='text/html'>
+	<div class="editButtons">
+		<a href="#" data-bind="click: toggleEdit, visible: !canEdit()">
+			<span>Edit Profile</span>
+		</a>
+		<a href="#" data-bind="click: toggleEdit, visible: canEdit()">
+			<span>Done Editing</span>
+		</a>
+	</div>
+	<div class="fn clear" data-bind="click: editName">
+		<h1><span data-bind="text: user.fullName"></span></h1>
+	</div>
+	<ul class="fields">
+		<li data-bind="click: editOccupation">
+			<div>
+				<h2>Occupation</h2>
+				<span data-bind="text: user.occupation"></span>
+			</div>
+		</li>
+		<li data-bind="click: editEmployment">
+			<div class="employment">
+				<h2>Employment</h2>
+				<span>
+					<ul data-bind="template: {name: 'employerTemplate', foreach: user.employment}"></ul>
+				</span>
+			</div>
+		</li>
+	</ul>
+	<div id="about-name-dialog">
+		<div class="left">
+			<div><input data-bind="value: user.firstName" label="First name" title="First name" placeholder="First name"/></div>
+			<div class="editor-label">First Name</div>
+		</div>
+		<div class="left">
+			<div><input data-bind="value: user.lastName" label="Last name" title="Last name" placeholder="Last name"/></div>
+			<div class="editor-label">Last Name</div>
+		</div>
+	</div>
+	<div id="about-occupation-dialog">
+		<div><input data-bind="value: user.occupation" /></div>
+		<div class="editor-label">Occupation</div>
+	</div>
+	<div id="about-employment-dialog">
+		<ul data-bind="templateEmployerList: {name: 'employerEditTemplate', foreach: user.employment, click: 'removeEmployer' }"></ul>
+		<div class="clear"><a href="#" data-bind="click: addEmployer">Add Employer</a></div>
+	</div>
+</script>
+<script id="employerTemplate" type="text/html">
+<li class="employer">
+	<div data-bind="text: name"></div>
+	<div class="line2 clear">
+		${title}, ${start} - ${end}
+	</div>
+</li>
+</script>
+<script id="employerEditTemplate" type="text/html">
+<li>
+	<div class="left">
+		<div><input data-bind="value: name" /></div>
+		<div class="editor-label">Name</div>
+	</div>
+	<div class="left">
+		<div><input data-bind="value: title" /></div>
+		<div class="editor-label">Title</div>
+	</div>
+	<div class="left date">
+		<div><input data-bind="value: start" /></div>
+		<div class="editor-label">Start</div>
+	</div>
+	<div class="left date">
+		<div><input data-bind="value: end" /></div>
+		<div class="editor-label">End</div>
+	</div>
+	<span class="left ui-icon ui-icon-closethick"></span>
+</li>
+</script>
+<div class="about">
+	<h1>About</h1>
+	<div class="userInfo"></div>
+</div>

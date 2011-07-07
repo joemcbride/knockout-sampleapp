@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="Controls.ashx.cs" Class="JM.Knockout.Services.Controls" %>

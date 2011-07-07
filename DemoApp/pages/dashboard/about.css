@@ -1,0 +1,14 @@
+﻿.userInfo .editButtons { float: right; }
+.userInfo .fn { padding: 10px 0 10px 135px; }
+.userInfo .highlight { background-color: #EBEFFA; cursor: pointer; }
+.userInfo .fields li { padding: 10px; }
+.userInfo .fields li h2 { float: left; }
+.userInfo .fields li div { display: inline-block; }
+.userInfo .fields li span { float: left; color: #333; font: normal 13px arial, sans-serif; padding: .25em 0 0 15px; width: 382px; position: relative; vertical-align: top; }
+.userInfo .fields .employment li { padding: 0 0 10px 0; }
+.userInfo .fields .employer div { display: block; }
+#about-name-dialog { display:none; padding: 15px; }
+#about-occupation-dialog { display:none; padding: 15px; }
+#about-employment-dialog { display:none; padding: 15px; }
+#about-employment-dialog .date input { width: 75px; }
+.line2 { color: #999; }

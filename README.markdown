@@ -1,0 +1,1 @@
+A sample application built on top of [Knockout] (http://knockoutjs.com).
